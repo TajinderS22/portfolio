@@ -39,4 +39,4 @@ jobs:
 
           ssh -i key.pem -o StrictHostKeyChecking=no $USER@$HOST "sudo rsync -avz --delete /tmp/portfolio-temp/ /home/azureuser/portfolio/Tajinder_Singh/dist && sudo rm -rf /tmp/portfolio-temp/"
 
-          ssh -i key.pem -o StrictHostKeyChecking=no $USER@$HOST "cd /home/azureuser/portfolio/Tajinder_Singh && pm2 reload portfolio"
+          ssh -i key.pem -o StrictHostKeyChecking=no $USER@$HOST "cd /home/azureuser/portfolio/Tajinder_Singh && /home/azureuser/.nvm/versions/node/v22.20.0/bin/pm2 reload portfolio"
