@@ -23,7 +23,7 @@ jobs:
         run: cd Tajinder_Singh && npm i
 
       - name: Build your React app
-        run: npm run build
+        run: cd Tajinder_Singh && npm run build
 
       - name: Upload build to your server
         env:
