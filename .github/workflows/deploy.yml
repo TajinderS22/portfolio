@@ -10,22 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get your code from GitHub
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 22
 
-      - name: Install project dependencies
+      - name: Install dependencies
+        working-directory: Tajinder_Singh       
+        run: npm install
 
-        run: cd Tajinder_Singh && npm i
+      - name: Build React app
+        working-directory: Tajinder_Singh
+        run: npm run build
 
-      - name: Build your React app
-        run: cd Tajinder_Singh && npm run build
-
-      - name: Upload build to your server
+      - name: Upload build to server
         env:
           HOST: ${{ secrets.PROD_HOST }}
           USER: ${{ secrets.PROD_USER }}
@@ -34,8 +35,8 @@ jobs:
           echo "$KEY" > key.pem
           chmod 600 key.pem
 
-          # copy the build folder (dist) to your server
-          rsync -avz --delete -e "ssh -i key.pem -o StrictHostKeyChecking=no" ./dist/ $USER@$HOST:/var/www/portfolio/
+          # copy the build folder to server
+          rsync -avz --delete -e "ssh -i key.pem -o StrictHostKeyChecking=no" ./Tajinder_Singh/dist/ $USER@$HOST:/var/www/portfolio/
 
-          # restart nginx so new files are live
+          # restart nginx
           ssh -i key.pem -o StrictHostKeyChecking=no $USER@$HOST "sudo nginx -t && sudo systemctl reload nginx"
