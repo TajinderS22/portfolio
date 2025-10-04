@@ -9,6 +9,6 @@ export default defineConfig({
   server: {
     host: true,               
     strictPort: true,         
-    // allowedHosts: ['tajinder.xyz'], // alternative way to whitelist domain
+    allowedHosts: ['tajinder.xyz'], 
   }
 })
