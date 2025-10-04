@@ -1,6 +1,6 @@
-name: deploy on prod
+name: Deploy on Prod
 
-on :
+on:
   push:
     branches:
       - main
@@ -8,13 +8,23 @@ on :
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    container:
-      image: node:22
-    steps: 
-      - uses: actions/checkout@v3
+
+    steps:
+      - name: Get your code from GitHub
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 22
-      - name: Deploy to server
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Build your React app
+        run: npm run build
+
+      - name: Upload build to your server
         env:
           HOST: ${{ secrets.PROD_HOST }}
           USER: ${{ secrets.PROD_USER }}
@@ -22,12 +32,9 @@ jobs:
         run: |
           echo "$KEY" > key.pem
           chmod 600 key.pem
-          ssh -o StrictHostKeyChecking=no -i key.pem $USER@$HOST "
-            cd portfolio/Tajinder_Singh &&
-            git pull origin main &&
-            npm i &&
-            npm run build &&
-            sudo cp -r ./dist /var/www/portfolio && 
-            sudo nginx -t &&
-            sudo nginx -s reload
-          "
+          
+          # copy the build folder (dist) to your server
+          rsync -avz --delete -e "ssh -i key.pem -o StrictHostKeyChecking=no" ./dist/ $USER@$HOST:/var/www/portfolio/
+
+          # restart nginx so new files are live
+          ssh -i key.pem -o StrictHostKeyChecking=no $USER@$HOST "sudo nginx -t && sudo systemctl reload nginx"
