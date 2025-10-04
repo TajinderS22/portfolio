@@ -23,7 +23,6 @@ jobs:
           echo "$KEY" > key.pem
           chmod 600 key.pem
           ssh -o StrictHostKeyChecking=no -i key.pem $USER@$HOST "
-            git clone https://github.com/TajinderS22/portfolio
             cd portfolio/Tajinder_Singh &&
             git pull origin main &&
             npm i &&
