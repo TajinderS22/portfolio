@@ -10,7 +10,7 @@ const Home = () => {
 
       {/* page content */}
 
-      <div id='About' className='text-white w-10/12 mx-auto md:p-6 p-2 ml-2 my-14'>
+      <div id='About' className='text-white w-10/12 mx-auto md:p-6 p-2 my-14'>
         <div className='flex justify-between'>
           <div className='flex-1 mt-8 md:pr-6'>
 
@@ -42,13 +42,13 @@ const Home = () => {
 
             <div className="flex flex-col justify-start md:gap-8 my-8 items-start rounded-lg shadow-md">
               
-              <div className='flex justify-start w-6/12 gap-6 items-center rounded-lg'>
+              <div className='flex justify-start w-6/12 md:gap-6 gap-2 items-center rounded-lg'>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-20 h-20  hover:scale-110 transition-transform duration-300" />
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-20 h-20  hover:scale-110 transition-transform duration-300" />
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-20 h-20  hover:scale-110 transition-transform duration-300" />
               </div>
 
-              <div className='flex justify-start w-6/12 gap-6 items-center rounded-lg'>
+              <div className='flex justify-start w-6/12 md:gap-6 gap-2 items-center rounded-lg'>
                 
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" className="w-20 h-20  invert hover:scale-110 transition-transform duration-300" />
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-20 h-20  hover:scale-110 transition-transform duration-300" />

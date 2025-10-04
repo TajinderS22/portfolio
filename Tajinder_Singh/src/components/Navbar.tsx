@@ -3,8 +3,8 @@ const Navbar = () => {
   return (
     <div className=' sticky max-w-[1920px] mt-4 w-full mx-auto flex' >
         <div className='w-10/12 flex 
-        rounded-[200px] justify-between px-6 pr-20 m-auto p-6 items-center bg-[#51CFB3] backdrop-blur-sm '>
-            <div className=' text-3xl drop-shadow-xl drop-shadow-amber-500 p-2 font-bold text-amber-950'>
+        rounded-[200px] justify-between px-6 pr-20 m-auto md:p-6 p-4 items-center bg-[#51CFB3] backdrop-blur-sm '>
+            <div className=' md:text-3xl text-2xl drop-shadow-xl drop-shadow-amber-500 p-2 font-bold text-amber-950'>
                 Tajinder Singh
             </div>
             <div className='list-none text-xl hidden md:flex gap-6 '>
