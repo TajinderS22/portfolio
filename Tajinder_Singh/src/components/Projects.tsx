@@ -5,7 +5,7 @@ const Projects = () => {
 
 
   return (
-    <div className=' transform w-11/12  justify-start  gap-6 pl-6 mx-auto flex flex-wrap  '>
+    <div className=' transform w-11/12  justify-start  gap-6 md:pl-6 mx-auto flex flex-wrap  '>
 
         <HostedProject Url={'https://agroadvisors.ddns.net'} Name={'AgroAdvisors'}/>
         <HostedProject Url={'http://brainly.tajinder.xyz'} Name={'Brainly'}/>

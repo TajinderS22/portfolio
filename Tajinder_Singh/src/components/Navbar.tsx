@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className=' text-3xl drop-shadow-xl drop-shadow-amber-500 p-2 font-bold text-amber-950'>
                 Tajinder Singh
             </div>
-            <div className='list-none text-xl  flex gap-6 '>
+            <div className='list-none text-xl hidden md:flex gap-6 '>
                 <a href='#About'><li className=' drop-shadow-md drop-shadow-amber-300 p-2 rounded-full px-6 border ' >About</li></a>
                 <a href='#Education'><li className=' drop-shadow-md drop-shadow-amber-300 p-2 rounded-full px-6 border ' >Education</li></a>
                 <a href='#Projects'><li className=' drop-shadow-md drop-shadow-amber-300 p-2 rounded-full px-6 border ' >Projects</li></a>
