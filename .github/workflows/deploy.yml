@@ -35,8 +35,6 @@ jobs:
           echo "$KEY" > key.pem
           chmod 600 key.pem
 
-          # copy the build folder to server
-          rsync -avz --delete -e "ssh -i key.pem -o StrictHostKeyChecking=no" ./Tajinder_Singh/dist/ $USER@$HOST:/var/www/portfolio/
+          rsync -avz --delete -e "ssh -i key.pem -o StrictHostKeyChecking=no" ./Tajinder_Singh/dist/ $USER@$HOST:/tmp/portfolio-temp/
 
-          # restart nginx
-          ssh -i key.pem -o StrictHostKeyChecking=no $USER@$HOST "sudo nginx -t && sudo systemctl reload nginx"
+          ssh -i key.pem -o StrictHostKeyChecking=no $USER@$HOST "sudo rsync -avz --delete /tmp/portfolio-temp/ /var/www/portfolio/ && sudo rm -rf /tmp/portfolio-temp/"
