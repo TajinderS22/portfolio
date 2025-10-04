@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from './Navbar'
 import EducationCard from './EducationCard'
 import Projects from './Projects'
@@ -66,14 +65,13 @@ const Home = () => {
           </div>
         </a>
         
-        <EducationCard instituteName="Dr B R AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY JALANDHAR" course="Bachelor of Technology" courseShortForm="B.Tech"  instituteImage='https://www.nitj.ac.in/public/assets/images/logo_250.png' Major='Instrumantation and Control Engineering (ICE)' SCHOOL={false} College={true} />
+        <EducationCard instituteName="Dr B R AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY JALANDHAR" course="Bachelor of Technology" courseShortForm="B.Tech"  instituteImage='https://www.nitj.ac.in/public/assets/images/logo_250.png' Major='Instrumantation and Control Engineering (ICE)'  />
 
         <EducationCard 
           instituteName="Central Board of Secondary Education (CBSE)"
           course="Science"
           courseShortForm="PCM"
           instituteImage="https://saras.cbse.gov.in/SARAS/ui/assets/images/cbse-logo.png"
-          SCHOOL={true}
           Major="Physics, Chemistry, Mathematics"
           Marks="89"
         />
@@ -84,7 +82,6 @@ const Home = () => {
           course="General Curriculum"
           courseShortForm="ICSE"
           instituteImage="https://cisceboard.org/images/cisce-60-logo-new.png"
-          SCHOOL={false}
           Major="English, Mathematics, Science, Social Studies, Computer Applications" 
           Marks="86"
         />

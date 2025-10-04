@@ -1,4 +1,3 @@
-import React from "react";
 import { Mail, MapPin, Linkedin, Github } from "lucide-react";
 
 const Contact = () => {

@@ -1,4 +1,3 @@
-import React from 'react'
 
 const GithubProjectCard = ({Name,ImageUrl,GithubUrl}:{Name:string; ImageUrl:string; GithubUrl:string}) => {
   return (

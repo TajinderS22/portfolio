@@ -1,4 +1,3 @@
-import React from 'react'
 import HostedProject from './HostedProject'
 import GithubProjectCard from './GithubProjectCard'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 
 const HostedProject = ({ Url, Name }: { Url: string; Name: string }) => {
   return (

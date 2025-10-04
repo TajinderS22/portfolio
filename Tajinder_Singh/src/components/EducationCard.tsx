@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react'
 
-const EducationCard = ({instituteName,course,courseShortForm,instituteImage,Major,Marks,SCHOOL,College}:{
-    instituteName:string,course:string,courseShortForm:string,instituteImage:string,Major:string,Marks?:string,SCHOOL:boolean,College?:boolean
+const EducationCard = ({instituteName,course,courseShortForm,instituteImage,Major,Marks}:{
+    instituteName:string,course:string,courseShortForm:string,instituteImage:string,Major:string,Marks?:string
 }) => {
   return (
     
