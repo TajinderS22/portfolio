@@ -35,7 +35,7 @@ const Skills = () => {
           <SkillCard imageUrl={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg'} alt={'TypeScript'} Name={'TypeScript'} side={'right'}/>
           <SkillCard imageUrl={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg'} alt={'Prisma'} Name={'Prisma'} side={'right'}/>
           <SkillCard imageUrl={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg'} alt={'Postgresql'} Name={'Postgresql'} side={'right'}/>
-          <SkillCard imageUrl={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg'} alt={'Postgresql'} Name={'Postgresql'} side={'right'}/>
+          <SkillCard imageUrl={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg'} alt={'Github'} Name={'Github'} side={'right'}/>
           <SkillCard imageUrl={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg'} alt={'Linux'} Name={'Linux'} side={'right'}/>
         </div>
     </div>
