@@ -43,5 +43,5 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             cd /home/azureuser/portfolio/Tajinder_Singh
-            pm2 reload portfolio
+            pm2 reload all
           '
