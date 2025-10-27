@@ -63,7 +63,7 @@ const SkillCard = ({imageUrl,alt,Name,side}:SkillCard) => {
 
 
   if(side=='left'){return (
-        <div className='bg-white w-[90%] my-2 dark:bg-black sticky md:top-20 top-30 rounded-xl '>
+        <div className='bg-white w-[90%] my-2 dark:bg-black sticky md:top-20 top-20 rounded-xl '>
             <div className={`w-full lg:px-12 md:px-6 px-2  shadow-xl py-1  rounded-xl ${bgClass} ${textClass} flex justify-between items-center`}>
                 <p className='lg:mr-12 lg:text-2xl '>{Name}</p>
                 <img src={imageUrl} alt={alt} className="w-20 h-20 end-0  animate-pulse hover:rotate-20  hover:scale-110 z-10 transition-transform duration-300" />
