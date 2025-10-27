@@ -1,21 +1,42 @@
+import { useEffect, useState } from "react";
+import ThemeToggle from "./ToggleTheme";
 
-const Navbar = () => {
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30); 
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className=' sticky max-w-[1920px] mt-4 w-full mx-auto flex' >
-        <div className='w-10/12 flex 
-        rounded-[200px] justify-between px-6 pr-20 m-auto md:p-6 p-4 items-center bg-[#51CFB3] backdrop-blur-sm '>
-            <div className=' md:text-3xl text-2xl drop-shadow-xl drop-shadow-amber-500 p-2 font-bold text-amber-950'>
-                Tajinder Singh
-            </div>
-            <div className='list-none text-xl hidden md:flex gap-6 '>
-                <a href='#About'><li className=' drop-shadow-md drop-shadow-amber-300 p-2 rounded-full px-6 border ' >About</li></a>
-                <a href='#Education'><li className=' drop-shadow-md drop-shadow-amber-300 p-2 rounded-full px-6 border ' >Education</li></a>
-                <a href='#Projects'><li className=' drop-shadow-md drop-shadow-amber-300 p-2 rounded-full px-6 border ' >Projects</li></a>
-                <a href='#Contact'><li className=' drop-shadow-md drop-shadow-amber-300 p-2 rounded-full px-6 border '> Contact me</li></a>
-            </div>
+    <div
+      className={`sticky top-4  max-w-[1920px] z-40 not-md:hidden dark:text-white shadow-2xl rounded-[200px] mx-auto flex transition-all duration-700 ease-in-out ${
+        isScrolled ? ' w-4/12 min-w-[500px]':"w-8/12"
+      }`}
+    >
+      <div
+        className={`flex justify-between z-20 dark:bg-indigo-400/30 items-center m-auto rounded-[200px] shadow-md backdrop-blur-sm px-6 p-4 transition-all duration-700 ease-in-out ${
+          isScrolled ? "bg-gray-300/50" : "bg-gray-300/50"
+        } ${isScrolled ? "md:p-3 p-3" : "md:p-4 p-4"} w-full`}
+      >
+        <div className= {`md:text-3xl z-20 dark:text-indigo-300 text-2xl drop-shadow-xl mx-2 ${isScrolled&& "hidden"} transition-all duration-250 ease-in-out font-bold text-gray-800`}>
+          Tajinder Singh
         </div>
-    </div>
-  )
-}
+        <div className={`list-none ${isScrolled && 'mx-auto'}  text-xl hidden md:flex gap-6`}>
+          <a href="#Skills"><li className="text-md mx-1">Skills</li></a>
+          <a href="#Education"><li className="text-md mx-1">Education</li></a>
+          <a href="#Projects"><li className="text-md mx-1">Projects</li></a>
+          <a href="#Contact"><li className="text-md mx-1">Contact</li></a>
+          
+            <ThemeToggle />
 
-export default Navbar
+        </div>
+      </div>
+    </div>
+  );
+}

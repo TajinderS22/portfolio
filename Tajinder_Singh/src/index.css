@@ -1,5 +1,4 @@
 @import "tailwindcss";
 
-body{
-    background-color: black
-}
+/* This line is REQUIRED for the v4 Vite plugin to recognize .dark */
+@custom-variant dark (&:where(.dark, .dark *));

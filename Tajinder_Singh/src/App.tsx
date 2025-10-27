@@ -11,7 +11,7 @@ const App = () => {
   ])
 
   return (
-    <div className="min-h-[100svh]  mx-auto">
+    <div className="min-h-svh bg-white dark:bg-black pb-1 pt-1  mx-auto">
       <RouterProvider router={routes}/>
     </div>
   )
