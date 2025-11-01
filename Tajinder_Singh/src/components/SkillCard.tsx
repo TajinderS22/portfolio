@@ -67,7 +67,7 @@ const SkillCard = ({imageUrl,alt,Name,side}:SkillCard) => {
         <div className='bg-white/30 w-[90%] my-2 dark:bg-black/20 sticky md:top-20 top-20 rounded-xl '>
             <div className={`w-full lg:px-12 md:px-6 px-2 shadow-sm py-1  rounded-xl ${bgClass} ${textClass} flex justify-between items-center`}>
                 <p className=' lg:text-2xl text-start ' >{Name}</p>
-                <img src={imageUrl} alt={alt} className={`w-20 h-20 dark:${Name=='AWS'?"bg-red-100":""}   hover:scale-110 z-10 transition-transform duration-300`} />
+                <img src={imageUrl} alt={alt} className={`w-20 h-20 ${isDark ?Name=='AWS'|| Name=="Next.js" || Name=="Express" || Name=="Prisma" || Name=="GitHub" || Name=="Postgresql" ?"bg-gray-400 px-2 rounded-2xl":"":""}   hover:scale-110 z-10 transition-transform duration-300`} />
             </div>
         </div>
 
@@ -78,7 +78,7 @@ const SkillCard = ({imageUrl,alt,Name,side}:SkillCard) => {
               
             <div className='bg-white/30 w-[90%] my-2 dark:bg-black/20 sticky md:top-20 top-50 rounded-xl '>
                 <div className={`w-full lg:px-12 md:px-6 px-2 shadow-sm py-1  rounded-xl ${bgClass} ${textClass} flex justify-between items-center`}>
-                    <img src={imageUrl} alt={alt} className={`w-20 h-20 dark:${Name=='AWS'?"bg-white/30":""}   hover:scale-110 z-10 transition-transform duration-300`} />
+                    <img src={imageUrl} alt={alt} className={`w-20 h-20  ${isDark ?Name=='AWS'|| Name=="Next.js" || Name=="Express" || Name=="Prisma" || Name=="GitHub" || Name=="Postgresql" ?"bg-gray-400 px-2 rounded-2xl":"":""}   hover:scale-110 z-10 transition-transform duration-300`} />
                     <p className=' lg:text-2xl  ' >{Name}</p>
                 </div>
             </div>

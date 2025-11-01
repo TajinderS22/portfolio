@@ -6,12 +6,12 @@ import Contact from './Contact'
 import { Github } from 'lucide-react'
 import Skills from './Skills'
 import ThemeToggle from './ToggleTheme'
-import { useRef, useState } from 'react'
+import { useRef} from 'react'
 import { SpiderCursorEffect } from './cursor/SpiderCursorEffect'
 
 const Home = () => {
 
-  const [isNew, setIsNew] = useState<boolean>(false)
+  // const [isNew, setIsNew] = useState<boolean>(false)
     const skillsRef = useRef<HTMLDivElement | null>(null);
     const ProjectsRef= useRef<HTMLDivElement | null>(null);
     const EducationRef= useRef<HTMLDivElement | null>(null);
@@ -21,12 +21,12 @@ const Home = () => {
   return (
     
     <div className='max-w-[1920px]  dark:bg-black w-full mx-auto transform transition-all duration-500 '>
-      {
+      {/* {
         isNew &&
         <div className='p-6 absolute w-full rounded-4xl z-30  h-screen bg-red-100'>
           <p className='mt-24 text-red-400 text-3xl font-semibold'>New Product Launched Checkout Enchat</p>
         </div>
-      }
+      } */}
       <div className='md:hidden'>
         <div className='p-2 m-2 flex items-center justify-between px-6 bg-sky-100 dark:bg-sky-600/60 rounded-2xl mx-auto w-11/12 '>
           <p className='text-xl font-extrabold'>Tajinder Singh</p>

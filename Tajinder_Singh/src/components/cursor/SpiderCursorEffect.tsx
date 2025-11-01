@@ -54,7 +54,7 @@ export const SpiderCursorEffect = ({
     // Initialize particles randomly in the canvas
     const initializeParticles = () => {
       particlesRef.current = [];
-      const rect = container.getBoundingClientRect();
+      // const rect = container.getBoundingClientRect();
       
       for (let i = 0; i < particleCount; i++) {
         const x = Math.random() * canvas.width;
