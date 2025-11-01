@@ -69,7 +69,7 @@ const GithubProjectCard = ({Name,ImageUrl,GithubUrl,description,TechStack}:Githu
 
   return (
     
-    <div className="md:w-11/12 w-full mx-auto flex not-md:flex-col  p-1 sticky md:top-110 top-20 my-1 rounded-md">
+    <div className="md:w-11/12 w-full mx-auto z-20 flex not-md:flex-col backdrop-blur-md p-2 sticky md:top-22 top-21  rounded-2xl">
       <a href={GithubUrl} target="__blank" rel="noopener noreferrer">
         <div className="transform duration-500 hover:scale-102 rounded-lg max-w-[400px] mx-auto  w-screen not-md:w-11/12 min-w-[300px]">
           <div className="relative z-10 bg-white h-[280px] overflow-hidden rounded-lg border-2 border-gray-300">
@@ -82,11 +82,11 @@ const GithubProjectCard = ({Name,ImageUrl,GithubUrl,description,TechStack}:Githu
           </div>
         </div>
       </a>
-      <div className='bg-white md:mx-2 mt-1 md:mt-0 dark:bg-black not-md:w-11/12 mx-auto  w-full'>
+      <div className='bg-white md:ml-2 not-md:h-80 rounded-md  flex flex-col mt-1 md:mt-0 dark:bg-black not-md:w-11/12 mx-auto  w-full'>
         <div className={`border ${bgClass} ${textClass} rounded-md h-full  w-full`}>
           <div className="px-2 pt-2 text-2xl font-semibold">{Name}</div>
           <div className="text-md mx-2 animate-pulse">Github</div>
-          <div className='flex flex-col w-10/12 mt-2'>
+          <div className='flex flex-1 flex-col  justify-between w-full md:mt-2'>
             <p className='p-2'>{description}</p>
             <div className='md:flex hidden gap-2 my-3 mx-4' >
               {TechStack.map((icon)=>{

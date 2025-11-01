@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Navbar from './Navbar'
 import EducationCard from './EducationCard'
 import Projects from './Projects'
@@ -5,11 +6,17 @@ import Contact from './Contact'
 import { Github } from 'lucide-react'
 import Skills from './Skills'
 import ThemeToggle from './ToggleTheme'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { SpiderCursorEffect } from './cursor/SpiderCursorEffect'
 
 const Home = () => {
 
   const [isNew, setIsNew] = useState<boolean>(false)
+    const skillsRef = useRef<HTMLDivElement | null>(null);
+    const ProjectsRef= useRef<HTMLDivElement | null>(null);
+    const EducationRef= useRef<HTMLDivElement | null>(null);
+    const contactRef= useRef<HTMLDivElement | null>(null);
+
 
   return (
     
@@ -23,12 +30,12 @@ const Home = () => {
       <div className='md:hidden'>
         <div className='p-2 m-2 flex items-center justify-between px-6 bg-sky-100 dark:bg-sky-600/60 rounded-2xl mx-auto w-11/12 '>
           <p className='text-xl font-extrabold'>Tajinder Singh</p>
-          <button className='bg-gray-300 p-2 rounded-xl' onClick={()=>{
+          {/* <button className='bg-gray-300 p-2 rounded-xl' onClick={()=>{
             setIsNew(true)
             setTimeout(()=>{
               setIsNew(false)
             },5000)
-          }}>New</button>
+          }}>New</button> */}
           <ThemeToggle/>
 
         </div>
@@ -77,9 +84,9 @@ const Home = () => {
 
       {/* skills */}
 
-      <div id="Skills"  className=' bg-blue-100  dark:bg-blue-600/30 mx-auto shadow-md lg:w-10/12 md:w-11/12 w rounded-xl ' >
-        
-          <div className=' w-full bg-blue-100 dark:bg-[#061C4B] z-20 sticky  md:top-0 top-2 mx-auto flex items-center  '>
+      <div id="Skills"  className=' bg-blue-100   dark:bg-blue-600/30 mx-auto shadow-md lg:w-10/12 md:w-11/12 w rounded-lg ' >
+          
+          <div className=' w-full bg-blue-100 dark:bg-[#061C4B] rounded-2xl  z-20 sticky  md:top-0 top-2 mx-auto flex items-center  '>
             <span className='text-blue-600 font-bold text-4xl   dark:text-indigo-100/90 ml-2  p-6 py-4 rounded-2xl   '>
               Skills
             </span>
@@ -87,7 +94,13 @@ const Home = () => {
           </div>
         
 
-        <div className=''>
+        <div ref={skillsRef} className='relative'>
+          <div className='md:dark:block hover:block hidden '>
+            <SpiderCursorEffect containerRef={skillsRef} particleCount={100} particleColor='47, 65, 156' connectionColor='144, 178, 224' />
+          </div>
+          <div className='dark:hidden not-md:hidden  '>
+            <SpiderCursorEffect containerRef={skillsRef} particleCount={100} particleColor='123, 160, 209' connectionColor='89, 137, 201' />
+          </div>
           <Skills/>
         </div>
 
@@ -97,7 +110,9 @@ const Home = () => {
 
       {/* Projects */}
 
-      <div id="Projects"  className=' mx-auto bg-cyan-50 dark:bg-cyan-600/30 lg:w-10/12 rounded-xl md:p-2 my-6 mt-14' >
+      <div id="Projects"   className=' mx-auto relative bg-cyan-50 dark:bg-cyan-600/30 lg:w-10/12 rounded-xl md:p-2 my-6 mt-14' >
+
+        
         
         <div className=' w-full mx-auto bg-cyan-50 dark:bg-[#002C37] z-20 items-center flex sticky md:top-0 top-0 '>
           <span className='text-cyan-600 text-4xl font-bold  dark:text-indigo-100/90 ml-2  p-2 pt-4  rounded-2xl  -yellow-200/40 '>
@@ -107,7 +122,13 @@ const Home = () => {
         </div>
       
 
-        <div className=''>
+        <div ref={ProjectsRef} className='relative'>
+          <div className='md:dark:block hover:block hidden '>
+            <SpiderCursorEffect containerRef={ProjectsRef} particleCount={300} particleColor='2, 82, 102' connectionColor='0, 139, 173' />
+          </div>
+          <div className='dark:hidden not-md:hidden  '>
+            <SpiderCursorEffect containerRef={ProjectsRef} particleCount={300} particleColor='0, 139, 173' connectionColor='0, 139, 173' />
+          </div>
           <Projects/>
         </div>
 
@@ -117,34 +138,48 @@ const Home = () => {
       {/* Education */}
             
       <div id='Education' className='md:w-10/12 rounded-xl w-full bg-stone-100 p-2 dark:bg-stone-600/50 mx-auto'>
-       <div className='  bg-stone-100 p-2 dark:bg-[#2C2927] z-20 sticky top-2 md:top-0 '>
-         <span className='text-stone-600 text-4xl  dark:text-white ml-2  font-bold p-2 rounded-2xl  '>
+       <div className='  bg-stone-100 p-2 dark:bg-[#2C2927] z-20 sticky top-0 md:top-0 '>
+         <span className='text-stone-600 text-4xl  dark:text-white md:ml-2  font-bold p-4 rounded-2xl  '>
            Education
          </span>
        </div>
           
+        <div ref={EducationRef} className='relative'>
+          <div className='md:dark:block hover:block hidden  '>
+            <SpiderCursorEffect containerRef={EducationRef} particleCount={100} particleColor='110, 106, 103' connectionColor='184, 179, 176' />
+          </div>
+          <div className='dark:hidden not-md:hidden   '>
+            <SpiderCursorEffect containerRef={EducationRef} particleCount={100} particleColor='184, 179, 176' connectionColor='184, 179, 176' />
+          </div>
+          
+          
+         <div className='z-10 '>
+           <EducationCard instituteName="Dr B R AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY JALANDHAR" course="Bachelor of Technology" courseShortForm="B.Tech"  instituteImage='https://www.nitj.ac.in/public/assets/images/logo_250.png' Major='Instrumantation and Control Engineering (ICE)'  />
+ 
+           <EducationCard 
+              instituteName="Central Board of Secondary Education (CBSE)"
+              course="Science"
+              courseShortForm="PCM"
+              instituteImage="https://saras.cbse.gov.in/SARAS/ui/assets/images/cbse-logo.png"
+              Major="Physics, Chemistry, Mathematics"
+              Marks="89"
+            />
+   
+           
+            <EducationCard 
+              instituteName="Council for the Indian School Certificate Examinations (CISCE)"
+              course="General Curriculum"
+              courseShortForm="ICSE"
+              instituteImage="https://cisceboard.org/images/cisce-60-logo-new.png"
+              Major="English, Mathematics, Science, Social Studies, Computer Applications" 
+              Marks="86"
+            />
+ 
+         </div>
+        </div>  
         
-        <EducationCard instituteName="Dr B R AMBEDKAR NATIONAL INSTITUTE OF TECHNOLOGY JALANDHAR" course="Bachelor of Technology" courseShortForm="B.Tech"  instituteImage='https://www.nitj.ac.in/public/assets/images/logo_250.png' Major='Instrumantation and Control Engineering (ICE)'  />
-
-        <EducationCard 
-          instituteName="Central Board of Secondary Education (CBSE)"
-          course="Science"
-          courseShortForm="PCM"
-          instituteImage="https://saras.cbse.gov.in/SARAS/ui/assets/images/cbse-logo.png"
-          Major="Physics, Chemistry, Mathematics"
-          Marks="89"
-        />
-
-
-        <EducationCard 
-          instituteName="Council for the Indian School Certificate Examinations (CISCE)"
-          course="General Curriculum"
-          courseShortForm="ICSE"
-          instituteImage="https://cisceboard.org/images/cisce-60-logo-new.png"
-          Major="English, Mathematics, Science, Social Studies, Computer Applications" 
-          Marks="86"
-        />
-
+          
+        
 
       </div>
 
@@ -163,8 +198,16 @@ const Home = () => {
           </div> */}
         </a>
 
-        <div className='md:w-11/12 rounded-xl dark:bg-green-600/30 bg-green-100 mx-auto'>
-          <Contact/>
+        <div  className='md:w-11/12 rounded-xl dark:bg-green-600/30 bg-green-100 mx-auto'>
+          <div ref={contactRef} className='relative '>
+            {/* <div className='md:dark:block hover:block  hidden '>
+              <SpiderCursorEffect containerRef={contactRef} particleCount={100} particleColor='0, 105, 40' connectionColor='144, 178, 224' />
+            </div>
+            <div className='dark:hidden not-md:hidden  '>
+              <SpiderCursorEffect containerRef={contactRef} particleCount={100} particleColor='133, 199, 158' connectionColor='0, 105, 40' />
+            </div> */}
+            <Contact/>
+          </div>
         </div>
 
       </div>
