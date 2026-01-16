@@ -36,10 +36,11 @@ type HostedProjectProps = {
   Url: string
   Name: string
   description:string,
-  TechStack:string[]
+  TechStack:string[],
+  New?:boolean
 }
 
-const HostedProject = ({ Url, Name,description,TechStack }: HostedProjectProps) => {
+const HostedProject = ({ Url, Name,description,TechStack, New }: HostedProjectProps) => {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
@@ -65,44 +66,55 @@ const HostedProject = ({ Url, Name,description,TechStack }: HostedProjectProps) 
       <a href={Url} target="__blank" rel="noopener noreferrer">
         <div className="transform duration-500 hover:scale-102 rounded-lg max-w-[400px] mx-auto w-screen not-md:w-11/12 min-w-[250px]">
           <div className="relative z-10 bg-white h-[280px] overflow-hidden rounded-lg border-2 border-gray-300">
-            <div className="absolute w-2 h-2 m-2 animate-ping rounded-full bg-green-400 z-10"></div>
+            <div className='absolute flex w-full justify-between '>
+              <div className="  w-2 h-2 m-2 animate-ping rounded-full bg-green-400 z-10"></div>
+              {New &&(<div className={` bg-indigo-600 animate-pulse  p-2 rounded-bl-md text-white   z-10 w-fit rounded-tr-lg`}>
+                new
+              </div>)}
+            </div>
             <iframe
               src={Url}
-              className="absolute top-0p left-0 scale-[0.49] origin-top-left w-[820px] h-[800px] pointer-events-none"
+              className="absolute top-0p left-0 scale-[0.49] origin-top-left w-[820px] h-svh pointer-events-none"
               title={Name}
             ></iframe>
           </div>
         </div>
       </a>
 
-      <div className='bg-white md:ml-2 mt-1   rounded-md md:mt-0 not-md:h-80  dark:bg-black md:w-full mx-auto w-11/12'>
-        <div className={`border ${bgClass} ${textClass}  flex flex-col rounded-md h-full  w-full`}>
-          <div className=' '>
+      <div className="bg-white md:ml-2 mt-1   rounded-md md:mt-0 not-md:h-80  dark:bg-black md:w-full mx-auto w-11/12">
+        <div
+          className={`border ${bgClass} ${textClass}  flex flex-col rounded-md h-full  w-full`}
+        >
+          <div className=" ">
             <div className="px-2 pt-2 text-2xl font-semibold">{Name}</div>
-            <a href={Url} target='_blank' ><div className="text-md mx-2 animate-pulse">Live</div></a>
+            <a href={Url} target="_blank">
+              <div className="text-md mx-2 animate-pulse">Live</div>
+            </a>
           </div>
-          <div className='flex flex-1  flex-col justify-between  w-12/12 mt-2'>
-            <p className='p-2 flex-1'>{description}</p>
-            <div className='hidden md:flex gap-2 my-3 mx-4' >
-              {TechStack.map((icon)=>{
-                console.log(icon)
-                if(!icon) return
-                const iconProps = DevIconsUrls[icon as keyof typeof DevIconsUrls]
-                console.log(iconProps)
-                if(!iconProps) return 
-                return(
-                  <div className='flex gap-4'>
-                    <img src={iconProps.url} className='w-12 animate-pulse mx-2' alt={iconProps.alt} />
+          <div className="flex flex-1  flex-col justify-between  w-12/12 mt-2">
+            <p className="p-2 flex-1">{description}</p>
+            <div className="hidden md:flex gap-2 my-3 mx-4">
+              {TechStack.map((icon) => {
+                if (!icon) return;
+                const iconProps =
+                  DevIconsUrls[icon as keyof typeof DevIconsUrls];
+                if (!iconProps) return;
+                return (
+                  <div className="flex gap-4">
+                    <img
+                      src={iconProps.url}
+                      className="w-12 animate-pulse mx-2"
+                      alt={iconProps.alt}
+                    />
                   </div>
-                )
-                })
-              }
+                );
+              })}
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default HostedProject

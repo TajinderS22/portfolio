@@ -90,10 +90,8 @@ const GithubProjectCard = ({Name,ImageUrl,GithubUrl,description,TechStack}:Githu
             <p className='p-2'>{description}</p>
             <div className='md:flex hidden gap-2 my-3 mx-4' >
               {TechStack.map((icon)=>{
-                console.log(icon)
                 if(!icon) return
                 const iconProps = DevIconsUrls[icon as keyof typeof DevIconsUrls]
-                console.log(iconProps)
                 if(!iconProps) return 
                 return(
                   <div className='flex gap-4'>
