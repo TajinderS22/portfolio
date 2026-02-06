@@ -24,7 +24,7 @@ const Projects = () => {
       />
 
       <HostedProject
-        Url={"https://brainly.tajinder.xyz"}
+        Url={"https://brainly.tajinder.in"}
         Name={"Brainly"}
         description={
           "Brainly helps you organize and store important information, making it easy to access and showcase key Information when you need them most. It’s designed to boost productivity and streamline knowledge retention, so you can stay on top of your growth and Grow together."
@@ -42,7 +42,7 @@ const Projects = () => {
 
       <HostedProject
         Name={"Enchat"}
-        Url={"https://enchat.tajinder.xyz"}
+        Url={"https://enchat.tajinder.in"}
         description={
           "Enchat ensures private, secure conversations with end-to-end encryption. Whether for personal or professional use, this app keeps your messages and data fully protected from third-party access, offering peace of mind in every chat."
         }
@@ -59,7 +59,7 @@ const Projects = () => {
       />
 
       <HostedProject
-        Url={"https://tutty.tajinder.xyz"}
+        Url={"https://tutty.tajinder.in"}
         Name={"Tutty"}
         description={
           "Tutty is a platform that allows course creators to easily upload and sell their courses. Users can browse and purchase courses for learning. It’s a straightforward solution for instructors to share their knowledge and for learners to access a variety of courses in a simple, user-friendly environment."

@@ -11,6 +11,6 @@ export default defineConfig({
   server: {
     host: true,
     strictPort: true,
-    allowedHosts: ['tajinder.xyz', 'www.tajinder.xyz'],
+    allowedHosts: ['tajinder.xyz', 'www.tajinder.xyz', "tajinder.in", "www.tajinder.in"],
   },
 })
