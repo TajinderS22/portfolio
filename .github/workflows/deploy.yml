@@ -60,9 +60,9 @@ jobs:
             pm2 -v
 
             echo '--- Switching to project directory ---'
-            cd /home/ubuntu/portfolio
+            cd /home/ubuntu/portfolio/Tajinder_Singh
+            npm i 
             npm run build
-
             pm2 restart all
 
           "
