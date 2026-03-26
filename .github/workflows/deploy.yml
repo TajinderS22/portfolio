@@ -60,7 +60,9 @@ jobs:
             pm2 -v
 
             echo '--- Switching to project directory ---'
+
             cd /home/ubuntu/portfolio/Tajinder_Singh
+            git pull origin main 
             npm i 
             npm run build
             pm2 restart all
