@@ -70,20 +70,14 @@ const Projects = () => {
           "Tailwind CSS",
           "Node.js",
           "Express",
-          "AWS"]}
-
-        New={true}
-      />  
-
-      <GithubProjectCard
+          "AWS",
+        ]}
+      />
+      <HostedProject
         Name={"DrawIt"}
-        ImageUrl={
-          "https://res.cloudinary.com/dcpz5001o/image/upload/v1761557387/Screenshot_from_2025-10-27_14-43-38_dy2fmg.png"
-        }
-        GithubUrl={"https://github.com/TajinderS22/DrawIt"}
-        description={
-          "DrawIt is a real-time collaborative whiteboarding app, similar to Excelidraw, that allows users to sketch, diagram, and brainstorm together. Whether for team collaboration or personal use, it offers intuitive drawing tools, seamless collaboration, and cloud-based storage for easy access to your creative work."
-        }
+
+
+        description={"DrawIt is a real-time collaborative whiteboarding app, similar to Excelidraw, that allows users to sketch, diagram, and brainstorm together. Whether for team collaboration or personal use, it offers intuitive drawing tools, seamless collaboration, and cloud-based storage for easy access to your creative work."}
         TechStack={[
           "Next.js",
           "Prisma",
@@ -92,8 +86,8 @@ const Projects = () => {
           "Express",
           "TypeScript",
           "PostgreSQL",
-        ]}
-      />
+        ]} Url={'https://drawit.tajinder.in'}  
+        New={true}    />
       <GithubProjectCard
         Name={"Netflix-GPT"}
         ImageUrl={
